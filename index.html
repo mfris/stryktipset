@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Resultat, tabell och säsongsschema för vår Stryktipsliga." />
+  <title>Stryktipset – Säsongen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow" id="seasonLabel">Stryktipset</p>
+      <h1>Årets Stryktipsliga</h1>
+      <p class="hero__text">
+        Sex spelare. Rullande schema. Sex omgångar var. Flest rätt totalt vinner.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="summary-grid" aria-label="Sammanfattning">
+      <article class="summary-card">
+        <span class="summary-card__label">Ledare</span>
+        <strong id="leaderName">–</strong>
+        <span id="leaderScore">0 poäng</span>
+      </article>
+
+      <article class="summary-card">
+        <span class="summary-card__label">Nästa omgång</span>
+        <strong id="nextPlayer">Spelare 1</strong>
+        <span id="nextRound">–</span>
+      </article>
+
+      <article class="summary-card">
+        <span class="summary-card__label">Bästa omgång</span>
+        <strong id="bestRound">–</strong>
+        <span id="bestRoundPlayer">Ingen ännu</span>
+      </article>
+
+      <article class="summary-card">
+        <span class="summary-card__label">Säsong</span>
+        <strong id="seasonRange">–</strong>
+        <span id="seasonWeeks">–</span>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Aktuell ställning</p>
+          <h2>Tabell</h2>
+        </div>
+        <p class="muted">Sorteras automatiskt efter totalpoäng.</p>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Plats</th>
+              <th>Spelare</th>
+              <th>Spelade</th>
+              <th>Totalt</th>
+              <th>Snitt</th>
+              <th>Bäst</th>
+            </tr>
+          </thead>
+          <tbody id="standingsBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Säsongsschema</p>
+          <h2>Alla omgångar</h2>
+        </div>
+        <p class="muted">Kalenderveckorna räknas ut automatiskt.</p>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Omgång</th>
+              <th>Vecka</th>
+              <th>År</th>
+              <th>Spelare</th>
+              <th>Resultat</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="roundsBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Veckouppdatering</p>
+          <h2>Så ändrar du sidan</h2>
+        </div>
+      </div>
+
+      <div class="instructions">
+        <p>
+          Inför en ny säsong ändrar du bara <code>startWeek</code> och
+          <code>startYear</code> i <code>results.js</code>.
+          Sedan fyller du i resultaten i kronologisk ordning.
+        </p>
+
+        <pre><code>const season = {
+  startWeek: 34,
+  startYear: 2026,
+  rounds: 36
+};
+
+const results = [
+  8,
+  10,
+  7,
+  null,
+  null
+];</code></pre>
+
+        <p>
+          Spelare, kalendervecka, årsskifte, tabell, nästa omgång och säsongens
+          slut räknas ut automatiskt.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Stryktipsligan <span id="footerSeason"></span></p>
+  </footer>
+
+  <script src="results.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
