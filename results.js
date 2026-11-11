@@ -27,7 +27,7 @@ const previousSeasons = [
 
 const results = [
   7, 8, 9, 6, 7, 7,
-  11, 11, 7, 9, 10, null,
+  11, 11, 7, 9, 10, 9,
   null, null, null, null, null, null,
   null, null, null, null, null, null,
   null, null, null, null, null, null,
